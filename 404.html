@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - João Pedro Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            text-align: center; /* Centralizar o texto */
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .profile-photo {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(168, 230, 207, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            margin-top: 15px;
+            font-size: 1.2em; /* Tamanho de fonte reduzido */
+            color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        /* Seção: Transforme sua marca */
+        .why-good-creative {
+            text-align: left;
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza o conteúdo */
+        }
+
+        .why-good-creative .text {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .why-good-creative .text h2 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: #a8e6cf;
+            font-weight: bold;
+        }
+
+        .why-good-creative .text p {
+            font-size: 0.95em;
+            color: #ccc;
+        }
+
+        .btn-container {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Centraliza o botão */
+        }
+
+        .btn-orcamento {
+            background-color: #a8e6cf;
+            color: #121212;
+            padding: 10px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 1.5s infinite; /* Animação de pulsar */
+            box-shadow: 0 0 30px rgba(168, 230, 207, 0.6); /* Brilho mais forte */
+        }
+
+        .btn-orcamento:hover {
+            background-color: #81c7b0;
+            box-shadow: 0 0 40px rgba(168, 230, 207, 0.9); /* Brilho mais forte no hover */
+        }
+
+        /* Seção Por Que Me Contratar */
+        .why-hire {
+            text-align: left;
+            margin-bottom: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .why-hire h2 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #a8e6cf;
+            font-weight: bold;
+        }
+
+        .why-hire ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .why-hire li {
+            font-size: 0.95em;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .why-hire li i {
+            font-size: 1.2em;
+            color: #a8e6cf;
+            margin-right: 10px;
+            animation: pulse 1.5s infinite; /* Animação de pulsar nos ícones de check */
+        }
+
+        /* Etapas do Projeto */
+        .steps-section {
+            text-align: left;
+            margin-bottom: 40px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .steps-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #a8e6cf;
+            font-weight: bold;
+            text-align: center; /* Centraliza o título */
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: start;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .step {
+            width: 100%;
+            max-width: 300px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .step-icon {
+            font-size: 2em;
+            color: #a8e6cf;
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+        }
+
+        .step p {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        /* Responsividade para dispositivos menores */
+        @media (max-width: 768px) {
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .step {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .step-icon {
+                font-size: 1.8em;
+            }
+
+            .step h3 {
+                font-size: 1.1em;
+            }
+
+            .step p {
+                font-size: 0.8em;
+            }
+
+            .why-good-creative {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .why-good-creative .text,
+            .why-good-creative .btn-container {
+                width: 100%;
+            }
+
+            .why-hire h2 {
+                font-size: 1.5em;
+            }
+
+            .why-hire {
+                justify-content: center;
+                margin-top: 40px;
+            }
+        }
+
+        /* Animação de pulsar */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="header">
+        <img src="https://images4.alphacoders.com/115/1155004.jpg" alt="Foto João Pedro" class="profile-photo">
+        <h1>João Pedro Design</h1>
+    </section>
+
+    <!-- Por que é bom ter um criativo bem desenvolvido -->
+    <section class="why-good-creative">
+        <div class="text">
+            <h2>Transforme sua marca com um design criativo e funcional!</h2>
+            <p>Um design de qualidade não apenas atrai atenção, mas também transmite profissionalismo, aumenta a confiança e ajuda a destacar sua marca em um mercado competitivo.</p>
+        </div>
+        <div class="btn-container">
+            <a href="#contato" class="btn-orcamento">Solicitar um Orçamento</a>
+        </div>
+    </section>
+
+    <!-- Por Que Me Contratar -->
+    <section class="why-hire">
+        <div class="why-hire-text">
+            <h2>Por Que Me Contratar?</h2>
+            <ul>
+                <li><i class="fa fa-check"></i> Desenvolvo designs que representam a identidade visual da sua empresa, tornando sua marca única e memorável.</li>
+                <li><i class="fa fa-check"></i> Otimizo o design para tráfego pago e orgânico, garantindo que sua presença online seja eficaz e atraente.</li>
+                <li><i class="fa fa-check"></i> Aumente a visibilidade da sua marca com designs criativos e profissionais que incentivam conversões e engajamento.</li>
+                <li><i class="fa fa-check"></i> Converto leads frios em clientes com estratégias visuais e criativas, que capturam a atenção e estimulam ação imediata.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Etapas do Projeto -->
+    <section class="steps-section">
+        <h2>O Processo de Criação do Seu Projeto</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <h3>1. Briefing Inicial</h3>
+                <p>Vamos entender suas necessidades e expectativas para o projeto, estabelecendo um planejamento estratégico para criar as soluções mais eficazes para o seu negócio.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fa fa-laptop-code"></i>
+                </div>
+                <h3>2. Criação e Desenvolvimento</h3>
+                <p>Começamos a criar o conceito visual, utilizando ferramentas avançadas de design para transformar a sua ideia em algo único.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <h3>3. Feedback e Ajustes</h3>
+                <p>Após a entrega inicial, você pode fornecer feedbacks, e faremos ajustes até que o design esteja perfeito para o seu projeto.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fa fa-check"></i>
+                </div>
+                <h3>4. Entrega Final</h3>
+                <p>Após a aprovação final, entregamos o design finalizado, pronto para ser utilizado nos canais de comunicação do seu negócio e causar o impacto desejado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 João Pedro Design | <a href="#">Contato</a> | <a href="#">Sobre</a></p>
+    </footer>
+
+</body>
+
+</html>
